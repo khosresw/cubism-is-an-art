@@ -1,0 +1,40 @@
+body{
+margin:0;
+font-family:Quicksand,sans-serif;
+background:#F7F2E8;
+display:grid;
+place-items:center;
+height:100vh;
+overflow:hidden;
+background-image:radial-gradient(circle at top,#fff,#F7F2E8);
+}
+.hero{text-align:center;color:#6b523d}
+h1{font-family:"Cormorant Garamond",serif;font-size:3rem;margin:.2em}
+#scene{width:260px;height:260px;perspective:900px;margin:30px auto}
+#cube{
+width:160px;height:160px;position:relative;
+transform-style:preserve-3d;
+transform:rotateX(-25deg) rotateY(35deg);
+margin:auto;
+animation:float 4s ease-in-out infinite;
+cursor:grab;
+}
+.face{
+position:absolute;width:160px;height:160px;
+background:#fffdf8;border:2px solid #c7a13a;border-radius:16px;
+display:grid;place-items:center;
+box-shadow:0 6px 12px rgba(0,0,0,.12);
+font-weight:600;
+}
+.front{transform:translateZ(80px)}
+.back{transform:rotateY(180deg) translateZ(80px)}
+.right{transform:rotateY(90deg) translateZ(80px)}
+.left{transform:rotateY(-90deg) translateZ(80px)}
+.top{transform:rotateX(90deg) translateZ(80px)}
+.bottom{transform:rotateX(-90deg) translateZ(80px)}
+button{padding:12px 32px;border:none;border-radius:30px;background:#c7a13a;color:#fff;font-size:1rem}
+.menu{display:flex;gap:40px;justify-content:center;margin-top:20px}
+.hint{opacity:.7}
+@keyframes float{
+50%{transform:rotateX(-25deg) rotateY(35deg) translateY(-10px)}
+}
